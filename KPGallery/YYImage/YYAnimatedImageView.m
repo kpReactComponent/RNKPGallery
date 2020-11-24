@@ -529,6 +529,9 @@ typedef NS_ENUM(NSUInteger, YYAnimatedImageType) {
 - (void)displayLayer:(CALayer *)layer {
     if (_curFrame) {
         layer.contents = (__bridge id)_curFrame.CGImage;
+    } else if ([UIImageView instancesRespondToSelector:@selector(displayLayer:)]) {
+        // fix iOS14 图片不显示
+        [super displayLayer:layer];
     }
 }
 
