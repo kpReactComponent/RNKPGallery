@@ -16,9 +16,9 @@
 
 // iOS 8 Foundation.framework extern these symbol but the define is in CFNetwork.framework. We just fix this without import CFNetwork.framework
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0)
-const float NSURLSessionTaskPriorityHigh = 0.75;
-const float NSURLSessionTaskPriorityDefault = 0.5;
-const float NSURLSessionTaskPriorityLow = 0.25;
+const float KPNSURLSessionTaskPriorityHigh = 0.75;
+const float KPNSURLSessionTaskPriorityDefault = 0.5;
+const float KPNSURLSessionTaskPriorityLow = 0.25;
 #endif
 
 NSString *const KPSDWebImageDownloadStartNotification = @"KPSDWebImageDownloadStartNotification";
@@ -187,9 +187,9 @@ typedef NSMutableDictionary<NSString *, id> SDCallbacksDictionary;
 #pragma clang diagnostic ignored "-Wunguarded-availability"
         if ([self.dataTask respondsToSelector:@selector(setPriority:)]) {
             if (self.options & SDWebImageDownloaderHighPriority) {
-                self.dataTask.priority = NSURLSessionTaskPriorityHigh;
+                self.dataTask.priority = KPNSURLSessionTaskPriorityHigh;
             } else if (self.options & SDWebImageDownloaderLowPriority) {
-                self.dataTask.priority = NSURLSessionTaskPriorityLow;
+                self.dataTask.priority = KPNSURLSessionTaskPriorityLow;
             }
         }
 #pragma clang diagnostic pop
