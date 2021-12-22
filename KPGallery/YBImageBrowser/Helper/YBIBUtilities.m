@@ -46,7 +46,28 @@ UIViewController *YBIBGetTopController(void) {
     static BOOL isIphoneX = NO;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSSet *platformSet = [NSSet setWithObjects:@"iPhone10,3", @"iPhone10,6", @"iPhone11,8", @"iPhone11,2", @"iPhone11,4", @"iPhone11,6", @"iPhone12,1", @"iPhone12,3", @"iPhone11,5", @"iPhone12,5", nil];
+        
+        NSSet *platformSet =
+            [NSSet setWithObjects:
+             @"iPhone10,3",
+             @"iPhone10,6",
+             @"iPhone11,8",
+             @"iPhone11,2",
+             @"iPhone11,4",
+             @"iPhone11,6",
+             @"iPhone12,1",
+             @"iPhone12,3",
+             @"iPhone11,5",
+             @"iPhone12,5",
+             @"iPhone13,1", // iPhone12
+             @"iPhone13,2",
+             @"iPhone13,3",
+             @"iPhone13,4",
+             @"iPhone14,2", // iPhone13
+             @"iPhone14,3",
+             @"iPhone14,4",
+             @"iPhone14,5",
+             nil];
         struct utsname systemInfo;
         uname(&systemInfo);
         NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
