@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KPGallery"
-  s.version      = "0.2.6"
+  s.version      = "0.2.7"
   s.summary      = "image browser for iOS (powerful, superior performance)"
   s.description  = <<-DESC
   					image browser for iOS (powerful, superior performance), 
